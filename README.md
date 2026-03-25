@@ -4,6 +4,10 @@
 
 > ⚡ **TL;DR:** Built a production-grade Transformer inference engine achieving a 5.7× speedup utilizing KV cache optimization, custom Triton-based FlashAttention kernels, and an asynchronous dynamic batching scheduler.
 
+> 🛠️ **Architecture Summary:** `Tokenizer` → `Transformer` → `Static KV Cache` → `Triton Kernel` → `Async Scheduler` → `FastAPI`
+
+*Note: This is a custom inference engine built to demonstrate core ML systems architecture and Triton kernel optimizations. It is not affiliated with the NVIDIA Triton Inference Server.*
+
 This project demonstrates a production-grade inference engine designed specifically for high-throughput, low-latency autoregressive token generation. By leveraging a hardware-aware engineering approach, it combines a high-performance C++ Tokenizer (Aegis-Tokenizer concept) with Triton kernel optimizations, static memory management, and explicit dynamic batch scheduling.
 
 ## 🛠️ Tech Stack
@@ -37,6 +41,14 @@ This project replicates the core challenges faced in modern LLM inference system
 - Code assistants (Copilot-style)
 - Real-time document processing
 - High-frequency AI inference APIs
+
+## 📂 Code Walkthrough
+
+To immediately review the core systems engineering applied in this project, start here:
+- [`model/transformer.py`](model/transformer.py) → Foundational forward pass loop and KV cache routing.
+- [`kernels/triton_attention.py`](kernels/triton_attention.py) → The custom Triton FlashAttention implementation with explicit SRAM tiling.
+- [`server/engine.py`](server/engine.py) → Time-windowed batching and API inference async scheduling logic.
+- [`benchmarks/`](benchmarks/) → Evaluation scripts calculating true hardware metrics (Tokens/sec, TTFT, Peak VRAM).
 
 ## 🚀 Features & Architecture
 
@@ -113,6 +125,9 @@ graph TD
 
 ### API Response
 ![API](assets/api_response.png)
+
+### Live Demo
+*[Insert Loom or Screen Recording Link Here - Demonstrating the FastAPI generation streaming live logs]*
 
 ### Server Logs
 ![Logs](assets/server_logs.png)
