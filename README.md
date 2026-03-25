@@ -127,7 +127,8 @@ graph TD
 ![API](assets/api_response.png)
 
 ### Live Demo
-*[Insert Loom or Screen Recording Link Here - Demonstrating the FastAPI generation streaming live logs]*
+> 🎥 *Awaiting your screen recording...*
+> *(To complete this, use a free tool like **[Loom](https://www.loom.com/)** or Windows Snipping Tool to record a 30-second video of your terminal running the inference API, upload it to YouTube/Loom, and link it here!)*
 
 ### Server Logs
 ![Logs](assets/server_logs.png)
