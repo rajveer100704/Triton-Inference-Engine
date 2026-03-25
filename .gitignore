@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python Virtual Environments
+venv/
+env/
+.env/
+.venv/
+ENV/
+
+# PyTorch / ML caches
+.triton/
+*.pt
+*.pth
+*.bin
+*.onnx
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+
+# Project specific temporary logs
+local_bench.py
+metrics.txt
+*.log
+
+# Keep the generated assets, but ignore MacOS artifacts
+.DS_Store

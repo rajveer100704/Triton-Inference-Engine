@@ -1,0 +1,11 @@
+model:
+  n_layers: 6
+  n_heads: 8
+  d_model: 512
+  vocab_size: 50257 # Expected vocab size for Aegis-Tokenizer / GPT-2 style
+
+inference:
+  batch_size: 8
+  max_seq_len: 512
+  use_triton: true
+  use_kv_cache: true
