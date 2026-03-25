@@ -127,8 +127,7 @@ graph TD
 ![API](assets/api_response.png)
 
 ### Live Demo
-> 🎥 *Awaiting your screen recording...*
-> *(To complete this, use a free tool like **[Loom](https://www.loom.com/)** or Windows Snipping Tool to record a 30-second video of your terminal running the inference API, upload it to YouTube/Loom, and link it here!)*
+![Live API Streaming Demo](assets/api_demo.gif)
 
 ### Server Logs
 ![Logs](assets/server_logs.png)
