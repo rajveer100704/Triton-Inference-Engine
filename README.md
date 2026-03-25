@@ -90,10 +90,10 @@ graph TD
     E --> G[K]
     E --> H[V]
     
-    subgraph Static KV Cache [Pre-Allocated GPU VRAM]
+    subgraph Static_KV_Cache [Pre-Allocated GPU VRAM]
         direction LR
-        K_Cache[Keys: batch x heads x seq_len x head_dim]
-        V_Cache[Values: batch x heads x seq_len x head_dim]
+        K_Cache["Keys: batch x heads x seq_len x head_dim"]
+        V_Cache["Values: batch x heads x seq_len x head_dim"]
     end
     
     G -->|O(1) Update| K_Cache
