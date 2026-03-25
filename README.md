@@ -82,28 +82,28 @@ This project replicates the core challenges faced in modern LLM inference system
 
 ```mermaid
 graph TD
-    A[Raw Prompt] --> B[Aegis-Tokenizer BPE]
+    A[Raw Prompt] --> B[Aegis Tokenizer BPE]
     B --> C[Token IDs]
     C --> D[Embedding Layer]
     D --> E{Forward Pass}
-    E --> F[Q]
+    
     E --> G[K]
     E --> H[V]
+    E --> F[Q]
     
-    subgraph Static_KV_Cache [Pre-Allocated GPU VRAM]
-        direction LR
+    subgraph Static_KV_Cache
         K_Cache["Keys: batch x heads x seq_len x head_dim"]
         V_Cache["Values: batch x heads x seq_len x head_dim"]
     end
     
-    G -->|O(1) Update| K_Cache
-    H -->|O(1) Update| V_Cache
+    G -->|Update| K_Cache
+    H -->|Update| V_Cache
     
-    K_Cache -->|Fetch History| I[Triton FlashAttention Kernel]
-    V_Cache -->|Fetch History| I
+    K_Cache -->|Fetch| I[Triton FlashAttention Kernel]
+    V_Cache -->|Fetch| I
     F --> I
     
-    I -->|Tiled SRAM Compute| J[Output Projections]
+    I -->|Compute| J[Output Projections]
 ```
 
 ## 📸 System in Action
